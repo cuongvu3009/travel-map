@@ -1,21 +1,26 @@
-import * as React from 'react';
-import './app.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import axios from 'axios';
 import { format } from 'timeago.js';
+
+import Register from './components/Register';
+import Login from './components/Login';
+import './app.css';
 
 import RoomIcon from '@mui/icons-material/Room';
 import StarIcon from '@mui/icons-material/Star';
 
 function App() {
-  const currentUser = 'Cuong';
+  const myStorage = window.localStorage;
+  const [currentUser, setCurrentUser] = useState(myStorage.getItem('user'));
   const [pins, setPins] = useState([]);
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [newPlace, setNewPlace] = useState(null);
   const [title, setTitle] = useState(null);
   const [desc, setDesc] = useState(null);
   const [rating, setRating] = useState(0);
+  const [showRegister, setShowRegister] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const [viewport, setViewport] = useState({
     width: '100vw',
     height: '100vh',
@@ -64,6 +69,11 @@ function App() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleLogout = () => {
+    myStorage.removeItem('user');
+    setCurrentUser(null);
   };
   return (
     <div className='App'>
@@ -154,12 +164,30 @@ function App() {
           </Popup>
         )}
         {currentUser ? (
-          <button className='button logout'>Log out</button>
+          <button className='button logout' onClick={handleLogout}>
+            Log out
+          </button>
         ) : (
           <div className='buttons'>
-            <button className='button login'>Login</button>
-            <button className='button register'>Register</button>
+            <button className='button login' onClick={() => setShowLogin(true)}>
+              Login
+            </button>
+            <button
+              className='button register'
+              onClick={() => setShowRegister(true)}
+            >
+              Register
+            </button>
           </div>
+        )}
+        {showRegister && <Register setShowRegister={setShowRegister} />}
+
+        {showLogin && (
+          <Login
+            setShowLogin={setShowLogin}
+            myStorage={myStorage}
+            setCurrentUser={setCurrentUser}
+          />
         )}
       </ReactMapGL>
     </div>
