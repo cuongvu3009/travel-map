@@ -20,9 +20,6 @@ mongoose
 app.use('/api/users', userRoute);
 app.use('/api/pins', pinRoute);
 
-const PORT = process.env.PORT || 8800;
-app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
-
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
@@ -32,3 +29,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
   });
 }
+
+const PORT = process.env.PORT || 8800;
+app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
