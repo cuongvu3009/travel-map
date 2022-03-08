@@ -1,4 +1,3 @@
-import './app.css';
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { axiosInstance } from './config';
