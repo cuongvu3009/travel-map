@@ -32,6 +32,7 @@ const Register = ({ setShowRegister }) => {
   return (
     <div className='registerContainer'>
       <div className='logo'>Register Account</div>
+
       <form onSubmit={handleSubmit}>
         <input type='text' placeholder='username' ref={nameRef} />
         <input type='email' placeholder='email' ref={emailRef} />

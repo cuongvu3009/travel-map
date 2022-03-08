@@ -1,0 +1,22 @@
+{
+  "name": "travel-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "16.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuongvu3009/travel-map.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cuongvu3009/travel-map/issues"
+  },
+  "homepage": "https://github.com/cuongvu3009/travel-map#readme"
+}

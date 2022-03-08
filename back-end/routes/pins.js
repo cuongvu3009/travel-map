@@ -9,6 +9,7 @@ router.post('/', async (req, res) => {
     res.status(200).json(savedPin);
   } catch (error) {
     res.status(500).json(error);
+    return;
   }
 });
 
@@ -19,6 +20,7 @@ router.get('/', async (req, res) => {
     res.status(200).json(pins);
   } catch (error) {
     res.status(500).json(error);
+    return;
   }
 });
 
