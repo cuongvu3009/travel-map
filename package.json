@@ -1,22 +1,30 @@
 {
-  "name": "travel-map",
+  "name": "back-end",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^12.0.4",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6",
+    "nodemon": "^2.0.15"
   },
   "engines": {
     "node": "16.14.0"
   },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cuongvu3009/travel-map.git"
   },
   "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/cuongvu3009/travel-map/issues"
   },
-  "homepage": "https://github.com/cuongvu3009/travel-map#readme"
+  "homepage": "https://github.com/cuongvu3009/travel-map#readme",
+  "description": ""
 }
