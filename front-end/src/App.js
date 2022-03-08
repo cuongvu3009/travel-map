@@ -5,6 +5,7 @@ import { format } from 'timeago.js';
 
 import Register from './components/Register';
 import Login from './components/Login';
+import './app.css';
 
 import RoomIcon from '@mui/icons-material/Room';
 import StarIcon from '@mui/icons-material/Star';
