@@ -1,3 +1,4 @@
+import './app.css';
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { axiosInstance } from './config';
@@ -5,7 +6,6 @@ import { format } from 'timeago.js';
 
 import Register from './components/Register';
 import Login from './components/Login';
-import './app.css';
 
 import RoomIcon from '@mui/icons-material/Room';
 import StarIcon from '@mui/icons-material/Star';
