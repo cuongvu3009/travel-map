@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-import axios from 'axios';
+import { axiosInstance } from './config';
 import { format } from 'timeago.js';
 
 import Register from './components/Register';
@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios.get('/pins');
+        const res = await axiosInstance.get('/pins');
         setPins(res.data);
       } catch (error) {
         console.log(error);
@@ -63,7 +63,7 @@ function App() {
     };
 
     try {
-      const res = await axios.post('/pins', newPin);
+      const res = await axiosInstance.post('/pins', newPin);
       setPins([...pins, res.data]);
       setNewPlace(null);
     } catch (error) {

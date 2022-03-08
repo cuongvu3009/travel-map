@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { axiosInstance } from '../config';
 import { useState, useRef } from 'react';
 import './register.css';
 
@@ -21,7 +21,7 @@ const Register = ({ setShowRegister }) => {
     };
 
     try {
-      await axios.post('/users/register', newUser);
+      await axiosInstance.post('/users/register', newUser);
       setFailure(false);
       setSuccess(true);
     } catch (error) {

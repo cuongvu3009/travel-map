@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { axiosInstance } from '../config';
 import { useState, useRef } from 'react';
 import './login.css';
 
@@ -16,7 +16,7 @@ const Login = ({ setShowLogin, myStorage, setCurrentUser }) => {
       password: passwordRef.current.value,
     };
     try {
-      const res = await axios.post('/users/login', user);
+      const res = await axiosInstance.post('/users/login', user);
       setCurrentUser(res.data.username);
       myStorage.setItem('user', res.data.username);
       setShowLogin(false);
